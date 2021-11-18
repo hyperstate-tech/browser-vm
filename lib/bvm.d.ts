@@ -1,17 +1,18 @@
 declare global {
     interface Window {
         eval: CallableFunction;
-        execScript: any;
         vmEval: (code: any, scope: any) => any;
+        vmEvalAsync: (code: any, scope: any) => Promise<any>;
     }
 }
 declare class VM {
     iframe: HTMLIFrameElement;
     iframeId: string;
     eval: any;
-    vmEval: (code: any, scope: any) => any;
+    vmEvalSync: (code: any, scope: any) => any;
+    vmEvalAsync: (code: any, scope: any) => Promise<any>;
     frameWindow: Window;
-    private noneDeletableKeys;
+    private nonDeletableKeys;
     init(): void;
     private setupIframe;
     private setupIframeContext;
