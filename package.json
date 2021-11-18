@@ -1,6 +1,6 @@
 {
   "name": "bvm",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Secure Environment to run Untrusted JS",
   "main": "bvm.js",
   "module": "bvm.esm.js",
