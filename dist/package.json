@@ -1,0 +1,15 @@
+{
+  "name": "browser-vm",
+  "version": "0.0.0",
+  "description": "Secure Environment to run Untrusted JS",
+  "main": "bvm.js",
+  "module": "bvm.esm.js",
+  "author": "SriHarsha Gangisetty",
+  "license": "MIT",
+  "private": false,
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyperstate/browser-vm"
+  }
+}
