@@ -29,7 +29,7 @@ export class Context {
   }
 
   async execute<T extends unknown = unknown>(script: Script, extraContext: Record<string, any> = {}): Promise<T | void> {
-    return console.log(script)
+    return await this.executeSync(script, extraContext)
   }
 
 }

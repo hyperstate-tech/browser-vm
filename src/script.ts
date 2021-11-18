@@ -13,8 +13,8 @@ export class Script {
     return this._compiledCode
   }
 
-  runInContext(context: Context, extraContext: Record<string, any> = {}) {
-    return context.execute(this)
+  async runInContext(context: Context, extraContext: Record<string, any> = {}) {
+    return await context.execute(this)
   }
 
   runInContextSync(context: Context, extraContext: Record<string, any> = {}) {

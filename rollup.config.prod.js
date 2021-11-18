@@ -6,7 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import generatePackageJson from 'rollup-plugin-generate-package-json';
 import copy from 'rollup-plugin-copy';
 
-const outputDir = './dist/';
+const outputDir = './lib/';
 const globalName = pkg.name; // replace if your package name is not compatible
 
 const banner = `/* **********************************
@@ -25,17 +25,17 @@ export default [{
     dir: './dts/'
   },
   plugins: [
-    del({ targets: ['dts/*', 'dist/*']}),
+    del({ targets: ['dts/*', 'lib/*']}),
     typescript({ 
       declaration: true, 
       outDir: './dts/', 
       rootDir: './src/', 
-      exclude: ['./test/**/*', './dts/**/*', './dist/**/*'] 
+      exclude: ['./test/**/*', './dts/**/*', './lib/**/*'] 
     }),
   ]
 }, {
   input: "./dts/index.d.ts",
-  output: [{ file: `./dist/${pkg.name}.d.ts`, format: "es" }],
+  output: [{ file: `./lib/${pkg.name}.d.ts`, format: "es" }],
   plugins: [dts()],
 }, {
   input: ['src/index.ts'],
@@ -67,9 +67,9 @@ export default [{
     terser(),
     copy({
       targets: [{
-        src: 'README.md', dest: 'dist'
+        src: 'README.md', dest: 'lib'
       },{
-        src: 'LICENSE', dest: 'dist'
+        src: 'LICENSE', dest: 'lib'
       },]
     }),
     del({ targets: ['dts/*']})

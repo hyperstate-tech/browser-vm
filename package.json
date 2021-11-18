@@ -1,9 +1,10 @@
 {
-  "name": "browser-vm",
+  "name": "bvm",
   "version": "0.0.0",
   "description": "Secure Environment to run Untrusted JS",
-  "main": "dist/bvm.js",
-  "module": "dist/bvm.esm.js",
+  "main": "bvm.js",
+  "module": "bvm.esm.js",
+  "types": "bvm.d.ts",
   "author": "SriHarsha Gangisetty",
   "license": "MIT",
   "private": false,
