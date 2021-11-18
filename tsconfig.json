@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "target": "es5",
+    "strict": false,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "pretty": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
