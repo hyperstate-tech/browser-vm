@@ -7,7 +7,7 @@ import generatePackageJson from 'rollup-plugin-generate-package-json';
 import copy from 'rollup-plugin-copy';
 
 const outputDir = './lib/';
-const globalName = pkg.name; // replace if your package name is not compatible
+const globalName = "BrowserVM"; // replace if your package name is not compatible
 
 const banner = `/* **********************************
 ${pkg.name} version ${pkg.version}
@@ -35,19 +35,19 @@ export default [{
   ]
 }, {
   input: "./dts/index.d.ts",
-  output: [{ file: `./lib/${pkg.name}.d.ts`, format: "es" }],
+  output: [{ file: `./lib/browser-vm.d.ts`, format: "es" }],
   plugins: [dts()],
 }, {
   input: ['src/index.ts'],
   output: [
     {
-      file: outputDir + pkg.module,
+      file: outputDir + "browser-vm.esm.js",
       format: 'es',
       sourcemap: true,
       banner: banner
     },
     {
-      file: outputDir + pkg.main,
+      file: outputDir + "browser-vm.js",
       name: globalName,
       format: 'umd',
       sourcemap: true,
